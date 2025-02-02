@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import {
   Home,
@@ -47,77 +46,77 @@ interface Comparable {
 
 // Sample Data
 const property: Property = {
-  address: "909 Troywood Drive",
-  type: "Single Family (Ranch/Rambler)",
-  sqft: 1616,
-  beds: 3,
-  baths: 1,
-  yearBuilt: 1956,
-  lotSize: "0.17 acres",
+  address: "155 Endico Road",
+  type: "Single Family (Colonial, Contemporary)",
+  sqft: 7381,
+  beds: 5,
+  baths: 6.2,
+  yearBuilt: 1973,
+  lotSize: "1.03 acres",
 };
 
 const comparables: Comparable[] = [
   {
-    address: "3038 Donna Drive",
-    sqft: 1821,
-    beds: 3,
-    baths: 1.5,
-    price: 289000,
+    address: "1919 Orchard Lane",
+    sqft: 6200,
+    beds: 5,
+    baths: 6.5,
+    price: 1794000,
     status: "For Sale",
     distance: "2.6 mi",
   },
   {
-    address: "336 E 13 Mile Road",
-    sqft: 1041,
-    beds: 3,
-    baths: 2,
-    price: 273000,
+    address: "591 Rudgate Road",
+    sqft: 4820,
+    beds: 4,
+    baths: 3.5,
+    price: 1849900,
     status: "For Sale",
+    distance: "1.2 mi",
+  },
+  {
+    address: "830 N Pemberton Road",
+    sqft: 4177,
+    beds: 4,
+    baths: 3.5,
+    price: 1799999,
+    status: "For Sale",
+    distance: "2.8 mi",
+  },
+  {
+    address: "31600 Nohingham Drive",
+    sqft: 7867,
+    beds: 4,
+    baths: 5.2,
+    price: 1645000,
+    status: "Sold",
+    distance: "4.5 mi",
+  },
+  {
+    address: "5140 Crest Knolls Court",
+    sqft: 6518,
+    beds: 6,
+    baths: 5.2,
+    price: 1650000,
+    status: "Sold",
     distance: "3.8 mi",
   },
   {
-    address: "34134 Dequindre Road",
-    sqft: 1200,
-    beds: 3,
-    baths: 2,
-    price: 269900,
-    status: "For Sale",
-    distance: "3.0 mi",
-  },
-  {
-    address: "3051 Donna Drive",
-    sqft: 1628,
-    beds: 3,
-    baths: 2,
-    price: 275000,
+    address: "7313 Brookside Village",
+    sqft: 5274,
+    beds: 5,
+    baths: 4.2,
+    price: 1825000,
     status: "Sold",
-    distance: "2.9 mi",
-  },
-  {
-    address: "3639 Jennifer Drive",
-    sqft: 1448,
-    beds: 3,
-    baths: 1.5,
-    price: 276000,
-    status: "Sold",
-    distance: "3.1 mi",
-  },
-  {
-    address: "901 Donald Avenue",
-    sqft: 1200,
-    beds: 3,
-    baths: 2,
-    price: 276000,
-    status: "Sold",
-    distance: "N/A",
+    distance: "3.7 mi",
   },
 ];
 
 const MarketAnalysis: React.FC = () => {
   // AI & Sales Strategy Insights
-  const recommendedListingPrice = 305000;
-  const acceptableOfferThreshold = 290000;
-  const estimatedTimeOnMarket = "30-60 days";
+  const recommendedListingPrice = 1795000;
+  const acceptableOfferThreshold = 1615500;
+  const estimatedTimeOnMarket = "164 Days";
 
   // Toggles for showing/hiding sections
   const [showPropertySnapshot, setShowPropertySnapshot] = React.useState(false);
@@ -126,8 +125,9 @@ const MarketAnalysis: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-4">
       <div className="max-w-3xl mx-auto bg-white shadow rounded-lg overflow-hidden">
-        {/* Header + Market Range & AI Insights */}
+        {/* Header + Market Range & AI Insights (extended gradient background) */}
         <div className="p-6 bg-gradient-to-r from-blue-100 to-green-100">
+          {/* Property Address & Header */}
           <div className="flex items-center gap-2 mb-3">
             <Home className="w-6 h-6 text-blue-600" />
             <h1 className="text-xl font-bold text-gray-900">
@@ -136,23 +136,25 @@ const MarketAnalysis: React.FC = () => {
           </div>
           <p className="flex items-center text-sm text-gray-600 mb-4">
             <MapPin className="w-4 h-4 mr-1" />
-            Troy, MI
+            Bloomfield Hills, MI
           </p>
+
+          {/* Market Range & AI Insights */}
           <div className="text-green-700 font-bold text-lg mb-2">
-            Market Range: {formatCurrency(249300)} - {formatCurrency(304700)}
+            Market Range: {formatCurrency(1615500)} - {formatCurrency(1974500)}
           </div>
           <p className="text-sm text-gray-700 leading-relaxed">
             Based on AI insights, the recommended pricing strategy is to list at{" "}
             {formatCurrency(recommendedListingPrice)}. We consider offers above{" "}
             {formatCurrency(acceptableOfferThreshold)} as acceptable and expect
             the property to remain on the market for approximately{" "}
-            {estimatedTimeOnMarket}. Our marketing plan includes a robust digital
-            and offline campaign with professional photos, virtual tours, and
-            targeted ads.
+            {estimatedTimeOnMarket}. Our marketing plan includes a robust
+            digital and offline campaign with professional photos, virtual
+            tours, and targeted ads.
           </p>
         </div>
 
-        {/* Property Snapshot */}
+        {/* Property Snapshot (Hidden by default, toggled via down arrow) */}
         <div className="p-4 border-b">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-lg font-semibold text-gray-900">
@@ -204,7 +206,7 @@ const MarketAnalysis: React.FC = () => {
           )}
         </div>
 
-        {/* Comparable Listings */}
+        {/* Comparable Listings (Hidden by default, toggled via down arrow) */}
         <div className="p-4 border-b">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-lg font-semibold text-gray-900">
@@ -228,9 +230,7 @@ const MarketAnalysis: React.FC = () => {
                 <div key={idx} className="p-3 bg-gray-50 rounded-md">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center">
-                      <p className="font-medium text-gray-800">
-                        {comp.address}
-                      </p>
+                      <p className="font-medium text-gray-800">{comp.address}</p>
                       <span
                         className={`text-xs ml-2 font-medium ${
                           comp.status === "Sold"
@@ -275,11 +275,10 @@ const MarketAnalysis: React.FC = () => {
         <div className="p-4 bg-gray-50">
           <div className="flex flex-col sm:flex-row sm:justify-between text-sm text-gray-700">
             <div>
+              {/* Logo and Company Name */}
               <div className="flex items-center gap-2 mb-2">
                 <Globe className="w-6 h-6 text-blue-600" />
-                <div className="text-lg font-semibold">
-                  World Showcase Realty
-                </div>
+                <div className="text-lg font-semibold">World Showcase Realty</div>
               </div>
               <p className="font-semibold">Contact: Vince Saragosa</p>
               <div className="flex items-center gap-1 mt-1">
