@@ -47,7 +47,7 @@ interface Comparable {
 
 // Sample Data
 const property: Property = {
-  address: "909 Troywood Drive, Troy, MI 48083",
+  address: "909 Troywood Drive",
   type: "Single Family (Ranch/Rambler)",
   sqft: 1616,
   beds: 3,
