@@ -126,9 +126,8 @@ const MarketAnalysis: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-4">
       <div className="max-w-3xl mx-auto bg-white shadow rounded-lg overflow-hidden">
-        {/* Header + Market Range & AI Insights (extended gradient background) */}
+        {/* Header + Market Range & AI Insights */}
         <div className="p-6 bg-gradient-to-r from-blue-100 to-green-100">
-          {/* Property Address & Header */}
           <div className="flex items-center gap-2 mb-3">
             <Home className="w-6 h-6 text-blue-600" />
             <h1 className="text-xl font-bold text-gray-900">
@@ -139,8 +138,6 @@ const MarketAnalysis: React.FC = () => {
             <MapPin className="w-4 h-4 mr-1" />
             Troy, MI
           </p>
-
-          {/* Market Range & AI Insights */}
           <div className="text-green-700 font-bold text-lg mb-2">
             Market Range: {formatCurrency(249300)} - {formatCurrency(304700)}
           </div>
@@ -149,13 +146,13 @@ const MarketAnalysis: React.FC = () => {
             {formatCurrency(recommendedListingPrice)}. We consider offers above{" "}
             {formatCurrency(acceptableOfferThreshold)} as acceptable and expect
             the property to remain on the market for approximately{" "}
-            {estimatedTimeOnMarket}. Our marketing plan includes a robust
-            digital and offline campaign with professional photos, virtual
-            tours, and targeted ads.
+            {estimatedTimeOnMarket}. Our marketing plan includes a robust digital
+            and offline campaign with professional photos, virtual tours, and
+            targeted ads.
           </p>
         </div>
 
-        {/* Property Snapshot (Hidden by default, toggled via down arrow) */}
+        {/* Property Snapshot */}
         <div className="p-4 border-b">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-lg font-semibold text-gray-900">
@@ -207,7 +204,7 @@ const MarketAnalysis: React.FC = () => {
           )}
         </div>
 
-        {/* Comparable Listings (Hidden by default, toggled via down arrow) */}
+        {/* Comparable Listings */}
         <div className="p-4 border-b">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-lg font-semibold text-gray-900">
@@ -231,7 +228,9 @@ const MarketAnalysis: React.FC = () => {
                 <div key={idx} className="p-3 bg-gray-50 rounded-md">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center">
-                      <p className="font-medium text-gray-800">{comp.address}</p>
+                      <p className="font-medium text-gray-800">
+                        {comp.address}
+                      </p>
                       <span
                         className={`text-xs ml-2 font-medium ${
                           comp.status === "Sold"
@@ -276,10 +275,11 @@ const MarketAnalysis: React.FC = () => {
         <div className="p-4 bg-gray-50">
           <div className="flex flex-col sm:flex-row sm:justify-between text-sm text-gray-700">
             <div>
-              {/* Logo and Company Name */}
               <div className="flex items-center gap-2 mb-2">
                 <Globe className="w-6 h-6 text-blue-600" />
-                <div className="text-lg font-semibold">World Showcase Realty</div>
+                <div className="text-lg font-semibold">
+                  World Showcase Realty
+                </div>
               </div>
               <p className="font-semibold">Contact: Vince Saragosa</p>
               <div className="flex items-center gap-1 mt-1">
